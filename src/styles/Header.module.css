@@ -1,0 +1,15 @@
+.header {
+  background-image: url('../assets/images/header-bg.jpg');
+  height: 17vw;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  text-align: center;
+  border: 0.1rem solid #000;
+}
+
+.title {
+  font-size: 5rem;
+  color: #fff;
+  margin: 0;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
