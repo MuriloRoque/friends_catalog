@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Characters = ({name, birthday, gender, image, charName}) =>
   (
@@ -10,5 +11,13 @@ const Characters = ({name, birthday, gender, image, charName}) =>
       <img src={image} alt="character"/>
     </div>
   );
+
+  Characters.propTypes = {
+    name: PropTypes.string.isRequired,
+    birthday: PropTypes.string.isRequired,
+    gender: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    charName: PropTypes.string.isRequired,
+  };
 
 export default Characters;
