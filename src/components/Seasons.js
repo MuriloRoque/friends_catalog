@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Seasons = ({ number }) => 
+const Seasons = ({ image }) => 
   (
     <div>
-      <p>{number}</p>
+      <img src={image} alt="season"/>
     </div>
   );
 
