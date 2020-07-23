@@ -1,45 +1,23 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Seasons from '../components/Seasons';
-import fetchApi from '../logic/apiCall';
+import { getSeasons, getCast} from '../actions/index';
 import Characters from '../components/Characters';
 
-const Lists = () => {
-  const [change, setChange] = useState('seasons');
-  const [seasons, setSeasons] = useState([]);
-  const [cast, setCast] = useState([]);
-
+const Lists = ({seasons, cast, getSeasons, getCast}) =>{
   useEffect(() => {
-    fetchApi('seasons').then(data => {
-      console.log(data)
-      setSeasons(data);
-    })
-      .catch(console.log);
-  }, []);
-
+    getSeasons();
+  }, [getSeasons]);
   useEffect(() => {
-    fetchApi('cast').then(data => {
-      console.log(data)
-      setCast(data);
-    })
-      .catch(console.log);
-  }, []);
-
-  const changeSeasons = useCallback(() => {
-    setChange('seasons')
-  }, [])
-
-  const changeCast = useCallback(() => {
-    setChange('cast')
-  }, [])
-
-  return (
+    getCast();
+  }, [getCast]);
+  return seasons.length === 0 || cast.length === 0 ? <div>Please wait</div> : (
     <div>
-      <button onClick={changeSeasons}>Show Seasons</button>
-      <button onClick={changeCast}>Show Characters</button>
+      <button>Show Seasons</button>
+      <button>Show Characters</button>
       <div>
-        { change === 'seasons' ?
+        { true ?
           seasons.map(season => (
             <Seasons key={season.id} image={season.image.medium} />
           )) :           cast.map(person => (
@@ -48,7 +26,25 @@ const Lists = () => {
         }
       </div>
     </div>
-  );
+  )
 };
+  
 
-export default Lists;
+  const mapStateToProps = state => ({
+    seasons: state.seasons,
+    cast: state.cast,
+  });
+
+  const mapDispatchToProps = dispatch => ({
+    getSeasons: () => dispatch(getSeasons()),
+    getCast: () => dispatch(getCast()),
+  });
+
+  Lists.propTypes = {
+    seasons: PropTypes.instanceOf(Array).isRequired,
+    cast: PropTypes.instanceOf(Array).isRequired,
+    getSeasons: PropTypes.func.isRequired,
+    getCast: PropTypes.func.isRequired,
+  };
+
+  export default connect(mapStateToProps, mapDispatchToProps)(Lists);
