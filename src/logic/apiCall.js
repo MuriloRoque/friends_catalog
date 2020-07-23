@@ -5,7 +5,7 @@ const fetchApi = async cast => {
   const UrlSeasons = `${URL + SEASONS}`;
   const UrlCast = `${URL + CAST}`;
 
-  if (cast) {
+  if (cast === 'cast') {
     const responseCast = await fetch(UrlCast, { mode: 'cors' });
     const dataCast = await responseCast.json();
     return dataCast;
