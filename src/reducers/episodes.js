@@ -1,10 +1,10 @@
-const seasons = (state = [], action) => {
+const episodes = (state = [], action) => {
   switch (action.type) {
-    case 'GET SEASONS':
+    case 'GET EPISODES':
       return [...state, ...action.payload];
     default:
       return state;
   }
 };
 
-export default seasons;
+export default episodes;

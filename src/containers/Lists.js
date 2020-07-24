@@ -1,27 +1,35 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Seasons from '../components/Seasons';
-import { getSeasons, getCast } from '../actions/index';
+import Episodes from '../components/Episodes';
+import { getEpisodes, getCast } from '../actions/index';
 import Characters from '../components/Characters';
 
 const Lists = ({
-  seasons, cast, getSeasons, getCast,
+  episodes, cast, getEpisodes, getCast,
 }) => {
   useEffect(() => {
-    getSeasons();
-  }, [getSeasons]);
+    getEpisodes();
+  }, [getEpisodes]);
   useEffect(() => {
     getCast();
   }, [getCast]);
-  return seasons.length === 0 || cast.length === 0 ? <div>Please wait</div> : (
+  return episodes.length === 0 || cast.length === 0 ? <div>Please wait</div> : (
     <div>
-      <button type="button">Show Seasons</button>
+      <button type="button">Show Episodes</button>
       <button type="button">Show Characters</button>
       <div>
-        { seasons
-          ? seasons.map(season => (
-            <Seasons key={season.id} image={season.image.medium} />
+        { true
+          ? episodes.map(episode => (
+            <Episodes 
+            key={episode.id} 
+            name={episode.name}
+            season={episode.season}
+            number={episode.number}
+            airdate={episode.airdate}
+            runtime={episode.runtime}
+            image={episode.image.medium}
+            summary={episode.summary} />
           )) : cast.map(person => (
             <Characters
               key={person.person.id}
@@ -38,19 +46,19 @@ const Lists = ({
 };
 
 const mapStateToProps = state => ({
-  seasons: state.seasons,
+  episodes: state.episodes,
   cast: state.cast,
 });
 
 const mapDispatchToProps = dispatch => ({
-  getSeasons: () => dispatch(getSeasons()),
+  getEpisodes: () => dispatch(getEpisodes()),
   getCast: () => dispatch(getCast()),
 });
 
 Lists.propTypes = {
-  seasons: PropTypes.instanceOf(Array).isRequired,
+  episodes: PropTypes.instanceOf(Array).isRequired,
   cast: PropTypes.instanceOf(Array).isRequired,
-  getSeasons: PropTypes.func.isRequired,
+  getEpisodes: PropTypes.func.isRequired,
   getCast: PropTypes.func.isRequired,
 };
 

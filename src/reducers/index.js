@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import seasons from './seasons';
+import episodes from './episodes';
 import cast from './cast';
 
 export default combineReducers({
-  seasons,
+  episodes,
   cast,
 });

@@ -1,3 +1,3 @@
-const VIEW = 'seasons';
+const VIEW = 'episodes';
 
 export default VIEW;

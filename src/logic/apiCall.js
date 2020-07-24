@@ -1,8 +1,8 @@
 const fetchApi = async cast => {
   const URL = 'http://api.tvmaze.com/shows/431/';
-  const SEASONS = 'seasons';
+  const EPISODES = 'episodes';
   const CAST = 'cast';
-  const UrlSeasons = `${URL + SEASONS}`;
+  const UrlEpisodes = `${URL + EPISODES}`;
   const UrlCast = `${URL + CAST}`;
 
   if (cast === 'cast') {
@@ -11,9 +11,9 @@ const fetchApi = async cast => {
     return dataCast;
   }
 
-  const responseSeasons = await fetch(UrlSeasons, { mode: 'cors' });
-  const dataSeasons = await responseSeasons.json();
-  return dataSeasons;
+  const responseEpisodes = await fetch(UrlEpisodes, { mode: 'cors' });
+  const dataEpisodes = await responseEpisodes.json();
+  return dataEpisodes;
 };
 
 export default fetchApi;
