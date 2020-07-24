@@ -13,7 +13,6 @@ const fetchApi = async cast => {
 
   const responseSeasons = await fetch(UrlSeasons, { mode: 'cors' });
   const dataSeasons = await responseSeasons.json();
-  console.log(dataSeasons)
   return dataSeasons;
 };
 

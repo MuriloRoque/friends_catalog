@@ -3,7 +3,6 @@ const seasons = (state = [], action) => {
     case 'GET SEASONS':
       return [...state, ...action.payload];
     default:
-      console.log(state)
       return state;
   }
 };
