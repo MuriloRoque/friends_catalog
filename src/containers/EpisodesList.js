@@ -31,6 +31,7 @@ const EpisodesList = ({
           summary={episode.summary}
           id={episode.id}
           handleFilterChange={filterEpisode}
+          filter={episodeFilter}
         />
       ))}
     </div>
