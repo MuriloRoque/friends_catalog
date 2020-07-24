@@ -1,4 +1,4 @@
-const fetchApi = async cast => {
+const fetchApi = async () => {
   const URL = 'http://api.tvmaze.com/shows/431/';
   const EPISODES = 'episodes';
   const Url = `${URL + EPISODES}`;

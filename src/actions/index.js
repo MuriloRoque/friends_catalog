@@ -1,10 +1,15 @@
 import fetchApi from '../logic/apiCall';
 
 export const getEpisodes = () => dispatch => {
-  fetchApi('episodes').then(data => {
+  fetchApi().then(data => {
     dispatch({
       type: 'GET EPISODES',
-      payload: data,
+      data,
     });
   });
 };
+
+export const filterEpisode = season => ({
+  type: 'CHANGE_FILTER',
+  season,
+});
