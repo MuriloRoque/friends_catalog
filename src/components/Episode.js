@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 
-const Episode = ({ season, number, name }) => (
+const Episode = ({ handleFilterChange, id, season, number, name }) => {
+  const filterChange = useCallback(event => {
+    handleFilterChange(event.target.value);
+  }, [handleFilterChange]);
+  return(
   <div>
     <p>
       Season number:
@@ -11,17 +15,16 @@ const Episode = ({ season, number, name }) => (
       Episode number:
       {number}
     </p>
-    <p>
-      Name:
+    <button onClick={filterChange} value={id} type='button'>
       {name}
-    </p>
+    </button>
   </div>
-);
+)}
 
 Episode.propTypes = {
-  season: PropTypes.string.isRequired,
+  season: PropTypes.number.isRequired,
   number: PropTypes.number.isRequired,
-  name: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 export default Episode;

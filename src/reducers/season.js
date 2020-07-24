@@ -1,4 +1,4 @@
-const episodeFilter = (state = 'All', action) => {
+const episodesFilter = (state = 'All', action) => {
   switch (action.type) {
     case 'CHANGE_FILTER':
       return action.season;
@@ -7,4 +7,4 @@ const episodeFilter = (state = 'All', action) => {
   }
 };
 
-export default episodeFilter;
+export default episodesFilter;

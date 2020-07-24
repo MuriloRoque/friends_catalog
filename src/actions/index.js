@@ -9,7 +9,12 @@ export const getEpisodes = () => dispatch => {
   });
 };
 
-export const filterEpisode = season => ({
+export const filterEpisodes = season => ({
   type: 'CHANGE_FILTER',
   season,
+});
+
+export const filterEpisode = id => ({
+  type: 'CHANGE_EPISODE',
+  id,
 });

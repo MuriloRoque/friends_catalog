@@ -2,12 +2,13 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Episode from '../components/Episode';
-import { getEpisodes, filterEpisode } from '../actions/index';
+import { getEpisodes, filterEpisodes, filterEpisode } from '../actions/index';
 import filteredEpisodes from '../logic/filter';
+import filteredEpisode from '../logic/episode';
 import SeasonFilter from '../components/SeasonFilter';
 
 const EpisodesList = ({
-  episodes, filter, getEpisodes, filterEpisode,
+  episodes, episodesFilter, episodeFilter, getEpisodes, filterEpisodes, filterEpisode
 }) => {
   useEffect(() => {
     getEpisodes();
@@ -16,9 +17,9 @@ const EpisodesList = ({
   return episodes.length === 0 ? <div>Please wait</div> : (
     <div>
       <div>
-        <SeasonFilter handleFilterChange={filterEpisode} />
+        <SeasonFilter handleFilterChange={filterEpisodes} />
       </div>
-      {filteredEpisodes(filter, episodes).map(episode => (
+      {filteredEpisodes(episodesFilter, filteredEpisode(episodeFilter, episodes)).map(episode => (
         <Episode
           key={episode.id}
           name={episode.name}
@@ -28,6 +29,8 @@ const EpisodesList = ({
           runtime={episode.runtime}
           image={episode.image.medium}
           summary={episode.summary}
+          id={episode.id}
+          handleFilterChange={filterEpisode}
         />
       ))}
     </div>
@@ -36,19 +39,23 @@ const EpisodesList = ({
 
 const mapStateToProps = state => ({
   episodes: state.episodes,
-  filter: state.filter,
+  episodesFilter: state.episodesFilter,
+  episodeFilter: state.episodeFilter,
 });
 
 const mapDispatchToProps = dispatch => ({
   getEpisodes: () => dispatch(getEpisodes()),
-  filterEpisode: season => dispatch(filterEpisode(season)),
+  filterEpisodes: season => dispatch(filterEpisodes(season)),
+  filterEpisode: id => dispatch(filterEpisode(id)),
 });
 
 EpisodesList.propTypes = {
   episodes: PropTypes.instanceOf(Array).isRequired,
   getEpisodes: PropTypes.func.isRequired,
-  filter: PropTypes.string.isRequired,
-  filterEpisode: PropTypes.func.isRequired,
+  episodesFilter: PropTypes.string.isRequired,
+  episodeFilter: PropTypes.string.isRequired,
+  filterEpisodes: PropTypes.func.isRequired,
+  filteredEpisode: PropTypes.func,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(EpisodesList);

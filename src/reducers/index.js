@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import episodes from './episodes';
-import filter from './filter';
+import episodesFilter from './season';
+import episodeFilter from './episode';
 
 export default combineReducers({
   episodes,
-  filter,
+  episodesFilter,
+  episodeFilter,
 });
