@@ -1,0 +1,17 @@
+.container {
+  margin-top: 2rem;
+}
+
+.filterLabel {
+  font-size: 2rem;
+  
+}
+
+.pleaseWait {
+  font-size: 5rem;
+  color: #7ab93f;
+  font-weight: 700;
+  margin-top: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+}

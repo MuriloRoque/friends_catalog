@@ -6,6 +6,7 @@ import { getEpisodes, filterEpisodes, filterEpisode } from '../actions/index';
 import filteredEpisodes from '../logic/filter';
 import filteredEpisode from '../logic/episode';
 import SeasonFilter from '../components/SeasonFilter';
+import episodesList from '../styles/EpisodesList.module.css';
 
 const EpisodesList = ({
   episodes, episodesFilter, episodeFilter, getEpisodes, filterEpisodes, filterEpisode
@@ -14,9 +15,10 @@ const EpisodesList = ({
     getEpisodes();
   }, [getEpisodes]);
 
-  return episodes.length === 0 ? <div>Please wait</div> : (
-    <div>
+  return episodes.length === 0 ? <div className={episodesList.pleaseWait}>Please wait</div> : (
+    <div className={episodesList.container}>
       <div>
+        <p className={episodesList.filterLabel}>Filter by Seasons:</p>
         <SeasonFilter handleFilterChange={filterEpisodes} />
       </div>
       {filteredEpisodes(episodesFilter, filteredEpisode(episodeFilter, episodes)).map(episode => (

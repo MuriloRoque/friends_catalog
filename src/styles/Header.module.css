@@ -5,11 +5,24 @@
   background-repeat: no-repeat;
   text-align: center;
   border: 0.1rem solid #000;
-}
-
-.title {
   font-size: 5rem;
   color: #fff;
-  margin: 0;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.header span {
+  margin: 1.5rem 1.5rem 2rem 0;
+  display: inline-block;
+}
+
+.yellow {
+  color: #ffff00;
+}
+
+.blue {
+  color: #0099ff;
+}
+
+.red {
+  color: #ff0000;
 }
