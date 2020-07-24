@@ -8,12 +8,3 @@ export const getEpisodes = () => dispatch => {
     });
   });
 };
-
-export const getCast = () => dispatch => {
-  fetchApi('cast').then(data => {
-    dispatch({
-      type: 'GET CAST',
-      payload: data,
-    });
-  });
-};

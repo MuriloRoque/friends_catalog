@@ -1,2 +1,0 @@
-export const CHANGE_TO_EPISODES = 'CHANGE_TO_EPISODES';
-export const CHANGE_TO_CAST = 'CHANGE_TO_CAST';
