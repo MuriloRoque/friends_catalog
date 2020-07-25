@@ -1,7 +1,7 @@
 import 'regenerator-runtime/runtime';
 
 const fetchApi = async () => {
-  const URL = 'http://api.tvmaze.com/shows/431/';
+  const URL = 'https://api.tvmaze.com/shows/431/';
   const EPISODES = 'episodes';
   const Url = `${URL + EPISODES}`;
 
