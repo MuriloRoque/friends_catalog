@@ -6,7 +6,7 @@
 
 First of all, you can find this project's requirements [here](https://www.notion.so/Catalogue-of-Statistics-72446e7fa33c403a9b6a0bc1de5c6cf5).
 
-[Video Presentation]()
+[Video Presentation](https://www.loom.com/share/349843f0f3c9446db0a949247476a512)
 
 In this project I:
 
