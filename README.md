@@ -1,8 +1,8 @@
 [![hire-badge](https://img.shields.io/badge/Consult%20/%20Hire%20Murilo-Click%20to%20Contact-brightgreen)](mailto:muriloengqui@gmail.com) [![Twitter Follow](https://img.shields.io/twitter/follow/MuriloRoquePai1?label=Follow%20Murilo%20on%20Twitter&style=social)](https://twitter.com/MuriloRoquePai1)
 
-# Friend's Catalog
+# Friends Catalog
 
-![App Demo]()
+![App Demo](./src/assets/images/screenshot.png)
 
 First of all, you can find this project's requirements [here](https://www.notion.so/Catalogue-of-Statistics-72446e7fa33c403a9b6a0bc1de5c6cf5).
 
@@ -35,9 +35,8 @@ In this project I:
 
 - When the App is executed, you will be able to:
 
-  - Get a list of all characters and episodes from the Friends TV Show;
-  - Filter characters and/or episodes by anything you want;
-  - See the details from the Friends' character, like age, first appearence, etc;
+  - Get a list of all  episodes from the Friends TV Show;
+  - Filter episodes by season;
   - See the details from the Friends' episode, like air date, duration, etc. 
 
 ## Built with
