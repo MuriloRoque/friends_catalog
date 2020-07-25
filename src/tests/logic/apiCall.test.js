@@ -6,7 +6,7 @@ describe('The data should be read from the API', () => {
       expect(typeof data).toBe('object');
     }).catch(() => {
 
-    });;
+    });
   });
   test('The object should contain the episodes', () => {
     fetchApi().then(data => {
@@ -19,6 +19,6 @@ describe('The data should be read from the API', () => {
       );
     }).catch(() => {
 
-    });;
+    });
   });
 });

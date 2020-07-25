@@ -9,5 +9,5 @@ test('Renders the connected list with initialState', () => {
     expect(screen.getByText(/The One Where Monica Gets a Roommate/i)).toBeInTheDocument();
   }).catch(() => {
 
-  });;
+  });
 });

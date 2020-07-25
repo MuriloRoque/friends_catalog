@@ -4,7 +4,7 @@
 
 .filterLabel {
   font-size: 2rem;
-  
+  text-align: center;
 }
 
 .pleaseWait {
@@ -14,4 +14,17 @@
   margin-top: 2rem;
   text-align: center;
   text-transform: uppercase;
+}
+
+.tableName {
+  display: flex;
+  width: 1000px;
+  margin: 1rem auto;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.tableName p {
+  width: 200px;
+  margin-left: 4rem;
 }

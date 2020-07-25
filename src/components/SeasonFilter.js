@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import SEASONS from '../constants/Seasons';
+import seasonFilter from '../styles/SeasonFilter.module.css';
 
 const SeasonFilter = ({ handleFilterChange }) => {
   const filterChange = useCallback(event => {
@@ -8,9 +9,9 @@ const SeasonFilter = ({ handleFilterChange }) => {
   }, [handleFilterChange]);
 
   return (
-    <div>
+    <div className={seasonFilter.container}>
       <label htmlFor="season">
-        <select onChange={filterChange}>
+        <select className={seasonFilter.select} onChange={filterChange}>
           {
            ['All'].concat(SEASONS).map(season => (
              <option key={season} value={season}>{ season }</option>

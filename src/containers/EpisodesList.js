@@ -9,7 +9,7 @@ import SeasonFilter from '../components/SeasonFilter';
 import episodesList from '../styles/EpisodesList.module.css';
 
 const EpisodesList = ({
-  episodes, episodesFilter, episodeFilter, getEpisodes, filterEpisodes, filterEpisode
+  episodes, episodesFilter, episodeFilter, getEpisodes, filterEpisodes, filterEpisode,
 }) => {
   useEffect(() => {
     getEpisodes();
@@ -21,6 +21,14 @@ const EpisodesList = ({
         <p className={episodesList.filterLabel}>Filter by Seasons:</p>
         <SeasonFilter handleFilterChange={filterEpisodes} />
       </div>
+      { episodeFilter === ''
+        ? (
+          <div className={episodesList.tableName}>
+            <p>Season Number</p>
+            <p>Episode Number</p>
+            <p>Title</p>
+          </div>
+        ) : <div />}
       {filteredEpisodes(episodesFilter, filteredEpisode(episodeFilter, episodes)).map(episode => (
         <Episode
           key={episode.id}
