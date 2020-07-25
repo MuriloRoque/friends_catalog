@@ -68,7 +68,7 @@ EpisodesList.propTypes = {
   episodesFilter: PropTypes.string.isRequired,
   episodeFilter: PropTypes.string.isRequired,
   filterEpisodes: PropTypes.func.isRequired,
-  filteredEpisode: PropTypes.func,
+  filterEpisode: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(EpisodesList);

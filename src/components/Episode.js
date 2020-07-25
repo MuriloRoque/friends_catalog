@@ -23,7 +23,10 @@ const Episode = ({
             <p>{runtime}</p>
           </div>
           <img src={image} alt={name} />
-          <p>Summary: {summary.slice(3, -4)}</p>
+          <p>
+            Summary:
+            {summary.slice(3, -4)}
+          </p>
           <button type="button" value="" onClick={filterChange}>Back</button>
         </div>
       )
@@ -49,7 +52,15 @@ Episode.propTypes = {
   name: PropTypes.string.isRequired,
   handleFilterChange: PropTypes.func.isRequired,
   id: PropTypes.number.isRequired,
+  airdate: PropTypes.string.isRequired,
+  runtime: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired,
+  summary: PropTypes.string.isRequired,
   filter: PropTypes.string,
+};
+
+Episode.defaultProps = {
+  filter: undefined,
 };
 
 export default Episode;
