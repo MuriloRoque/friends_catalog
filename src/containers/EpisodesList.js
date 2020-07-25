@@ -17,16 +17,18 @@ const EpisodesList = ({
 
   return episodes.length === 0 ? <div className={episodesList.pleaseWait}>Please wait</div> : (
     <div className={episodesList.container}>
-      <div>
-        <p className={episodesList.filterLabel}>Filter by Seasons:</p>
-        <SeasonFilter handleFilterChange={filterEpisodes} />
-      </div>
       { episodeFilter === ''
         ? (
-          <div className={episodesList.tableName}>
-            <p>Season Number</p>
-            <p>Episode Number</p>
-            <p>Title</p>
+          <div>
+            <div>
+              <p className={episodesList.filterLabel}>Filter by Seasons:</p>
+              <SeasonFilter handleFilterChange={filterEpisodes} />
+            </div>
+            <div className={episodesList.tableName}>
+              <p>Season Number</p>
+              <p>Episode Number</p>
+              <p>Title</p>
+            </div>
           </div>
         ) : <div />}
       {filteredEpisodes(episodesFilter, filteredEpisode(episodeFilter, episodes)).map(episode => (

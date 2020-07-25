@@ -11,11 +11,19 @@ const Episode = ({
   return (
     (filter)
       ? (
-        <div>
-          <p>{airdate}</p>
-          <p>{runtime}</p>
-          <p>{summary}</p>
+        <div className={episode.details}>
+          <div>
+            <p>Title</p>
+            <p>Airdate</p>
+            <p>Runtime (min)</p>
+          </div>
+          <div>
+            <p>{name}</p>
+            <p>{airdate}</p>
+            <p>{runtime}</p>
+          </div>
           <img src={image} alt={name} />
+          <p>Summary: {summary.slice(3, -4)}</p>
           <button type="button" value="" onClick={filterChange}>Back</button>
         </div>
       )

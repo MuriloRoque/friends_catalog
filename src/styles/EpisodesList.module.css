@@ -27,4 +27,5 @@
 .tableName p {
   width: 200px;
   margin-left: 4rem;
+  text-decoration: underline;
 }
