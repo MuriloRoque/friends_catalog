@@ -1,0 +1,31 @@
+.container {
+  margin-top: 2rem;
+}
+
+.filterLabel {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.pleaseWait {
+  font-size: 5rem;
+  color: #7ab93f;
+  font-weight: 700;
+  margin-top: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.tableName {
+  display: flex;
+  width: 1000px;
+  margin: 1rem auto;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.tableName p {
+  width: 200px;
+  margin-left: 4rem;
+  text-decoration: underline;
+}

@@ -1,0 +1,22 @@
+.container {
+  text-align: center;
+  display: flex;
+  width: 1000px;
+  margin: 0 auto;
+  font-size: 2rem;
+  padding: 2rem 1rem;
+  border: 0.1rem solid #000;
+  align-items: center;
+}
+
+.container:nth-child(even) {
+  background-color: #f8f4f4;
+}
+
+.container p {
+  width: 200px;
+  text-align: center;
+  display: block;
+  padding-left: 4rem;
+  margin: 0;
+}
