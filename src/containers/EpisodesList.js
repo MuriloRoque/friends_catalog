@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Episode from '../components/Episode';
-import { getEpisodes, filterEpisodes, filterEpisode } from '../actions/index';
+import { getEpisodes, filterEpisodes } from '../actions/index';
 import filteredEpisodes from '../logic/filter';
 import SeasonFilter from '../components/SeasonFilter';
 import episodesList from '../styles/EpisodesList.module.css';
@@ -28,16 +29,26 @@ const EpisodesList = ({
         </div>
       </div>
       {filteredEpisodes(episodesFilter, episodes).map(episode => (
-        <Episode
+        <Link
           key={episode.id}
-          name={episode.name}
-          season={episode.season}
-          number={episode.number}
-          airdate={episode.airdate}
-          runtime={episode.runtime}
-          image={episode.image.medium}
-          summary={episode.summary}
-        />
+          to={{
+            pathname: `/episode/${episode.id}`,
+            state: {
+              name: episode.name,
+              airdate: episode.airdate,
+              runtime: episode.runtime,
+              image: episode.image.medium,
+              summary: episode.summary,
+            },
+          }}
+        >
+          <Episode
+            key={episode.id}
+            name={episode.name}
+            season={episode.season}
+            number={episode.number}
+          />
+        </Link>
       ))}
     </div>
   );
