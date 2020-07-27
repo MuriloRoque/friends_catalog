@@ -1,4 +1,4 @@
-import { filterEpisode, filterEpisodes } from '../../actions/index';
+import { filterEpisodes } from '../../actions/index';
 
 describe('actions', () => {
   test('should create an action to filter episodes', () => {
@@ -8,14 +8,5 @@ describe('actions', () => {
       season,
     };
     expect(filterEpisodes(season)).toEqual(expectedAction);
-  });
-
-  test('should create an action to filter one episode', () => {
-    const id = '521';
-    const expectedAction = {
-      type: 'CHANGE_EPISODE',
-      id,
-    };
-    expect(filterEpisode(id)).toEqual(expectedAction);
   });
 });

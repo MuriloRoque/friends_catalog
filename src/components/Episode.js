@@ -1,16 +1,11 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import episode from '../styles/Episode.module.css';
 
-const Episode = ({
-  handleFilterChange, id, season, number, airdate, runtime, image, summary, name, filter,
+const Episode = ({season, number, airdate, runtime, image, summary, name
 }) => {
-  const filterChange = useCallback(event => {
-    handleFilterChange(event.target.value);
-  }, [handleFilterChange]);
   return (
-    (filter)
-      ? (
+    <div>
         <div className={episode.details}>
           <div>
             <p>Title</p>
@@ -27,10 +22,7 @@ const Episode = ({
             Summary:
             {summary.slice(3, -4)}
           </p>
-          <button type="button" value="" onClick={filterChange}>Back</button>
         </div>
-      )
-      : (
         <div className={episode.container}>
           <p>
             {season}
@@ -38,11 +30,8 @@ const Episode = ({
           <p>
             {number}
           </p>
-          <button onClick={filterChange} value={id} type="button">
-            {name}
-          </button>
         </div>
-      )
+        </div>
   );
 };
 
@@ -50,17 +39,10 @@ Episode.propTypes = {
   season: PropTypes.number.isRequired,
   number: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
-  handleFilterChange: PropTypes.func.isRequired,
-  id: PropTypes.number.isRequired,
   airdate: PropTypes.string.isRequired,
   runtime: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
   summary: PropTypes.string.isRequired,
-  filter: PropTypes.string,
-};
-
-Episode.defaultProps = {
-  filter: undefined,
 };
 
 export default Episode;
