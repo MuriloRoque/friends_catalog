@@ -28,7 +28,15 @@ const EpisodeItem = ({ location }) => {
 };
 
 EpisodeItem.propTypes = {
-  location: PropTypes.string.isRequired,
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      airdate: PropTypes.string.isRequired,
+      runtime: PropTypes.number.isRequired,
+      image: PropTypes.string.isRequired,
+      summary: PropTypes.string.isRequired,
+    }),
+  }).isRequired,
 };
 
 export default EpisodeItem;

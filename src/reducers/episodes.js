@@ -1,7 +1,7 @@
 const episodes = (state = [], action) => {
   switch (action.type) {
     case 'GET EPISODES':
-      return [...state, ...action.data];
+      return [...action.data];
     default:
       return state;
   }
